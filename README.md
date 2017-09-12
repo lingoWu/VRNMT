@@ -3,11 +3,10 @@
 ## Variational Recurrent Neural Machine Translation
 
 ### Requirements
-Code is written in Python (2.7) and requires Theano (0.7).
+Code is written in Python (2.7) and requires numpy and Theano (0.7).
 
 Using the pre-trained `word2vec` vectors will also require downloading the binary file from
 https://code.google.com/p/word2vec/
-
 
 ### Data Preprocessing
 1. Build vocabulary
@@ -67,7 +66,7 @@ python rnnsearch.py train --vv 4 \
 
 * Resume training
 ```
-  python rnnsearch.py train --vv 4 --model nmt.autosave.pkl
+  python rnnsearch.py train --vv 4 --model vrnmt.autosave.pkl
 ```
 
 ### Decoding
@@ -77,7 +76,5 @@ python rnnsearch.py train --vv 4 \
 
 ### UNK replacement
 ```
-  python rnnsearch.py replace --model vrnmt.best.pkl --text input translation
-                              --dictionary dict.zh-en > newtranslation
+  python rnnsearch.py replace --vv 4 --model vrnmt.best.pkl --text input translation --dictionary dict.zh-en > newtranslation
 ```
-
